@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Covid Cases";
+    List<covid_cases.DTO.Country> countries = ViewData["Countries"] as List<covid_cases.DTO.Country>;
+}
+    <h4>Sorted list of countries according to total number of cases</h4>
+    <ol>
+        @foreach (covid_cases.DTO.Country country in countries){
+                <li>
+                    <span class="countryName">@country.Name</span>: <span class="countryCases">@country.TotalConfirmed</span>
+                </li>
+            }
+    </ol>
